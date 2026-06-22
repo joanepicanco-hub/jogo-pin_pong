@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localizador de Remédios</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        header{
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .pesquisa{
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        input{
+            width: 300px;
+            padding: 10px;
+        }
+
+        button{
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #218838;
+        }
+
+        #resultado{
+            margin-top: 30px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💊 Localizador de Remédios</h1>
+        <p>Encontre medicamentos rapidamente</p>
+    </header>
+
+    <section class="pesquisa">
+        <input type="text" id="medicamento" placeholder="Digite o nome do medicamento">
+        <button onclick="pesquisarMedicamento()">Pesquisar</button>
+    </section>
+
+    <section id="resultado"></section>
+
+    <script>
+        function pesquisarMedicamento() {
+
+            let medicamento =
+                document.getElementById("medicamento").value;
+
+            if (medicamento === "") {
+                alert("Digite um medicamento.");
+                return;
+            }
+
+            document.getElementById("resultado").innerHTML = `
+                <h2>Resultado da Pesquisa</h2>
+                <p><strong>Medicamento:</strong> ${medicamento}</p>
+                <p><strong>Farmácia:</strong> Farma Saúde</p>
+                <p><strong>Preço:</strong> R$ 25,90</p>
+                <p><strong>Status:</strong> Em estoque</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
